@@ -92,43 +92,58 @@ body{
     margin:16px ;
 }
 /* =============================▼▼▼▼-Fade In-▼▼▼▼==================================================== */
-
+/* everything in this section only appears when the user hovers over the container */
 .service-info{
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
     align-content: center;
     text-align: center;
     opacity: 1;
-    /* width: 100%; */
     height:4rem ;
     position: absolute;
-    top: 50%;  
-    left: 50%; 
+    top: 20%;  
+    left: -900%; 
     transform: translate(-50%, -50%);
-    display: none;
+    /* display: none; */
     
+}
+.service-info > p , address{
+margin-top: 20px;
+font-weight: 600;
+background-color: rgba(255, 255, 255, 0.178);
+font-size: larger;
+text-align: center;
+/* opacity: 0; */
+
 }
 .service-info > .more-info {
     background-color: aqua;
     border-color: blueviolet;
     border-style: double;
-    border-radius: 20%;
+    border-radius: 10px;
+    border-width:5px ;
     font-size: larger;
+    text-decoration: none;
+    padding: 16px;
     
 }
 
-.fade-in:has(.image-container):hover{
-    animation: fadein 2s;
+.container:hover>.image-container>.fade-in{
+    animation:fadein 2s;
     opacity: 1;
     display: block;
+    top: 20%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
 }
 
-@keyframes fadeOut {
+@keyframes fadein {
   from {
-  	opacity: 1;
+  	opacity: 0;
   }
   to {
- 	opacity: 0;
+ 	opacity: 1;
   }
 }
 
