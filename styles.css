@@ -20,19 +20,22 @@ body{
 }
 .image-of-services{
     /* effects the size of all images in html format */
-    height: 400px;
-    width: 500px;
+    height:25em;
+    width: 25em;
 }
 /* individual containers for all the separate images applied to all ▼ */
 .container{
-    height: 400px;
-    width: 500px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    height: 25em;
+    width:25em;
     margin: 16px;
     position: relative;
     overflow: hidden;
     border:solid 3px white ;
     border-radius: 50%;
-
+    text-align: center;
 }
 
 
@@ -46,7 +49,6 @@ body{
     left: 50%; 
     transform: translate(-50%, -50%);
     width:100%;
-    /* text-align: center; */
     z-index: 1;
     padding:10px 20px ;
     background-color: rgba(233, 10, 10, 0.582);
@@ -87,9 +89,7 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 100%;
-    width: 100%;
-    margin:16px ;
+    margin:1rem ;
 }
 /* =============================▼▼▼▼-Fade In-▼▼▼▼==================================================== */
 /* everything in this section only appears when the user hovers over the container */
@@ -105,17 +105,20 @@ body{
     top: 20%;  
     left: -900%; 
     transform: translate(-50%, -50%);
-    /* display: none; */
+    display: none;
     
 }
 .service-info > p , address{
-margin-top: 20px;
+margin-top: 4rem;
 font-weight: 600;
 background-color: rgba(255, 255, 255, 0.178);
 font-size: larger;
 text-align: center;
 /* opacity: 0; */
 
+}
+address{
+    margin-top: 0;
 }
 .service-info > .more-info {
     background-color: aqua;
@@ -126,11 +129,12 @@ text-align: center;
     font-size: larger;
     text-decoration: none;
     padding: 16px;
+    margin-top: 2rem;
     
 }
 
 .container:hover>.image-container>.fade-in{
-    animation:fadein 2s;
+    animation: fadein 2s;
     opacity: 1;
     display: block;
     top: 20%;  
@@ -156,19 +160,28 @@ text-align: center;
 
 /* on any screen that has a width smaller than 686px the size of images and circles will decrease and change direction into a colum to fit phone screen widths */
 @media(max-width:686px){
+
+    .page-heading,.sub-title{
+        /* the heading and subtitle heading in the header of the page */
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        display: none;
+    }
     .wrapper{
         display:flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-content: center;
         height: 100%;
         width: 100%;
-        margin:16px ;
+        margin:1rem ;
     }
     .container{
-        height: 200px;
-        width: 250px;
-        margin: 16px;
+        height: 25em;
+        width: 25em;
+        margin: 1rem;
         position: relative;
         overflow: hidden;
         border:solid 3px white ;
@@ -177,8 +190,8 @@ text-align: center;
     }
     .image-of-services{
         /* effects the size of all images in html format */
-        height: 200px;
-        width: 250px;
+        height: 25em;
+        width: 25em;
     }
 
     .service-lable {
@@ -201,5 +214,72 @@ text-align: center;
         font-size: large;
         text-align: center;
     }
+
+    /* shown after mouse hovers over container */
     
+    .service-info{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        vertical-align: bottom;
+        align-content: center;
+        text-align: center;
+        opacity: 1;
+        height:min-content ;
+        position: absolute;
+        top: 20%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        display: none;
+        
+    }
+    .service-info > p , address{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        /* margin-top:1rem; */
+        font-weight: 600;
+        background-color: rgba(255, 255, 255, 0.178);
+        font-size: small;
+        /* text-align: center; */
+        opacity: 0;
+    
+    }
+    address{
+        margin: 0;
+    }
+    .service-info > .more-info {
+        display: flex;
+        justify-content: center;
+        vertical-align:middle;
+        background-color: aqua;
+        border-color: blueviolet;
+        border-style:solid;
+        border-radius: 5px;
+        border-width:5px ;
+        font-size: small;
+        padding: .5rem;
+        text-decoration: none;
+        /* margin-top: 2rem; */
+        
+    }
+    
+     .container:hover>.image-container>.fade-in{
+        animation:fadein 2s;
+        opacity: 1;
+        display: block;
+        top: 10%;  
+        left: 50%; 
+        transform: translate(-50%, -50%);
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+         opacity: 1;
+        }
+      } 
 }
