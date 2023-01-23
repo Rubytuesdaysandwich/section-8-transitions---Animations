@@ -40,7 +40,7 @@ body{
 /* individual containers for all the separate images applied to all ▲ */
 /* contains the service lable inside the images that tells the user what it is▼ */
 .service-lable {
-    position: absolute;
+   
     position: absolute;
     top: 50%;  
     left: 50%; 
@@ -59,7 +59,7 @@ body{
     font-size: xx-large;
 }
 /* fade out the service label when a user hovers over the service label to show more information */
- .fade-out:hover {
+.fade-out:hover>.image-container>.service-lable{
 	animation: fadeOut 2s;
   	opacity: 0;
 }
@@ -91,6 +91,53 @@ body{
     width: 100%;
     margin:16px ;
 }
+/* =============================▼▼▼▼-Fade In-▼▼▼▼==================================================== */
+
+.service-info{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    text-align: center;
+    opacity: 1;
+    /* width: 100%; */
+    height:4rem ;
+    position: absolute;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    display: none;
+    
+}
+.service-info > .more-info {
+    background-color: aqua;
+    border-color: blueviolet;
+    border-style: double;
+    border-radius: 20%;
+    font-size: larger;
+    
+}
+
+.fade-in:has(.image-container):hover{
+    animation: fadein 2s;
+    opacity: 1;
+    display: block;
+}
+
+@keyframes fadeOut {
+  from {
+  	opacity: 1;
+  }
+  to {
+ 	opacity: 0;
+  }
+}
+
+
+
+
+
+
+
 
 /* on any screen that has a width smaller than 686px the size of images and circles will decrease and change direction into a colum to fit phone screen widths */
 @media(max-width:686px){
