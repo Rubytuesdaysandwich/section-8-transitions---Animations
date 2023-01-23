@@ -34,19 +34,7 @@ body{
     border-radius: 50%;
 
 }
-.fade-out:hover {
-	animation: fadeOut 2s;
-  	opacity: 0;
-}
 
-@keyframes fadeOut {
-  from {
-  	opacity: 1;
-  }
-  to {
- 	opacity: 0;
-  }
-}
 
 
 /* individual containers for all the separate images applied to all ▲ */
@@ -69,6 +57,20 @@ body{
     display: flex;
     justify-content: center;
     font-size: xx-large;
+}
+/* fade out the service label when a user hovers over the service label to show more information */
+ .fade-out:hover {
+	animation: fadeOut 2s;
+  	opacity: 0;
+}
+
+@keyframes fadeOut {
+  from {
+  	opacity: 1;
+  }
+  to {
+ 	opacity: 0;
+  }
 }
 /* contains the service lable inside the images that tells the user what it is▲ */
 /* container for wedding card ▼ */
